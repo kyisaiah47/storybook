@@ -1,0 +1,198 @@
+:root[data-theme="light"] {
+	--text-primary: #1e1e2f;
+	--text-secondary: #5f5f75;
+	--glass-bg: rgba(160, 140, 255, 0.15);
+	--border-color: rgba(140, 120, 255, 0.15);
+	--gradient: linear-gradient(120deg, #e0c3fc, #8ec5fc);
+	--shadow: 0 8px 24px rgba(140, 120, 255, 0.15);
+}
+
+:root[data-theme="dark"] {
+	--text-primary: #eaeaff;
+	--text-secondary: #b5b5d9;
+	--glass-bg: rgba(100, 90, 160, 0.25);
+	--border-color: rgba(180, 160, 255, 0.15);
+	--gradient: linear-gradient(120deg, #8ec5fc, #e0c3fc);
+	--shadow: 0 8px 24px rgba(120, 100, 200, 0.25);
+}
+
+.storybook-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 2.75rem;
+	margin: 2.5rem auto 3rem;
+	max-width: 960px;
+	border-radius: 2.5rem;
+	background: var(--glass-bg);
+	backdrop-filter: blur(28px);
+	-webkit-backdrop-filter: blur(28px);
+	border: 1px solid var(--border-color);
+	box-shadow: inset 0 0 0 0.5px rgba(200, 180, 255, 0.12),
+		0 8px 32px rgba(120, 100, 200, 0.06), 0 0 0 0.5px rgba(200, 180, 255, 0.15);
+	position: relative;
+	overflow: visible;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.storybook-header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	padding: 1px;
+	background: var(--gradient);
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	-webkit-mask-composite: destination-out;
+	pointer-events: none;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+.storybook-header__brand {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-shrink: 0;
+}
+
+.storybook-header__brand svg {
+	width: 32px;
+	height: 32px;
+}
+
+.storybook-header__title {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-weight: 600;
+	font-size: 1rem;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.storybook-header__nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: var(--text-secondary);
+	position: relative;
+}
+
+.dropdown {
+	position: relative;
+	cursor: pointer;
+}
+
+.dropdown span {
+	position: relative;
+	transition: color 0.2s ease;
+}
+
+.dropdown span::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background: var(--gradient);
+	transition: width 0.3s ease;
+}
+
+.dropdown:hover span {
+	color: var(--text-primary);
+}
+
+.dropdown:hover span::after {
+	width: 100%;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 180px;
+	background: rgba(180, 160, 255, 0.25);
+	backdrop-filter: blur(12px);
+	border-radius: 1rem;
+	box-shadow: 0 8px 24px rgba(140, 120, 255, 0.15);
+	padding: 0.75rem 0.5rem;
+	z-index: 999;
+	white-space: nowrap;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 0.6rem 1.4rem;
+	color: var(--text-primary);
+	text-decoration: none;
+	font-size: 0.88rem;
+	transition: background 0.2s ease;
+	border-radius: 0.5rem;
+}
+
+.dropdown-menu a:hover {
+	background-color: rgba(140, 120, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.storybook-header__search input {
+	font-size: 0.9rem;
+	padding: 0.6rem 1rem;
+	border-radius: 999px;
+	border: 1px solid rgba(140, 120, 255, 0.25);
+	background: rgba(160, 140, 255, 0.15);
+	backdrop-filter: blur(6px);
+	outline: none;
+	transition: border 0.2s ease;
+	min-width: 180px;
+	color: var(--text-primary);
+}
+
+.storybook-header__search input::placeholder {
+	color: var(--text-secondary);
+}
+
+.storybook-header__search input:focus {
+	border-color: rgba(140, 120, 255, 0.4);
+}
+
+.storybook-header__actions {
+	display: flex;
+	gap: 0.6rem;
+	flex-shrink: 0;
+}
+
+.storybook-header__actions button {
+	font-size: 0.85rem;
+	font-weight: 600;
+	padding: 0.6rem 1.6rem;
+	border-radius: 999px;
+	color: #fff;
+	background: var(--gradient);
+	border: none;
+	backdrop-filter: blur(12px);
+	box-shadow: 0 3px 10px rgba(120, 100, 200, 0.12);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.storybook-header__actions button:hover {
+	transform: scale(1.04);
+	box-shadow: 0 6px 16px rgba(120, 100, 200, 0.2),
+		0 0 24px rgba(180, 160, 255, 0.25);
+}
