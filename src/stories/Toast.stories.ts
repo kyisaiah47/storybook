@@ -15,13 +15,32 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		message: "Your changes have been saved.",
+		type: "info",
+		title: "Changes saved",
+		description: "Your changes have been saved successfully.",
 	},
 };
 
-export const Dismissible: Story = {
+export const Success: Story = {
 	args: {
-		message: "Profile updated successfully.",
-		onDismiss: () => alert("Toast dismissed"),
+		type: "success",
+		title: "Profile updated",
+		description: "Your profile was updated and synced.",
+	},
+};
+
+export const Error: Story = {
+	args: {
+		type: "error",
+		title: "Error saving",
+		description: "Something went wrong. Please try again.",
+	},
+};
+
+export const Warning: Story = {
+	args: {
+		type: "warning",
+		title: "Unsaved changes",
+		description: "You have unsaved edits that will be lost.",
 	},
 };

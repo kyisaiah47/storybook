@@ -1,30 +1,41 @@
 import { motion } from "framer-motion";
-import { X } from "lucide-react";
+import { CheckCircle, AlertCircle, Info, AlertTriangle } from "lucide-react";
 import "./toast.css";
 
+type ToastType = "success" | "error" | "info" | "warning";
+
 interface ToastProps {
-	message: string;
-	onDismiss?: () => void;
+	type?: ToastType;
+	title: string;
+	description?: string;
 }
 
-export const Toast = ({ message, onDismiss }: ToastProps) => {
+const icons = {
+	success: CheckCircle,
+	error: AlertCircle,
+	info: Info,
+	warning: AlertTriangle,
+};
+
+export const Toast = ({ type = "info", title, description }: ToastProps) => {
+	const Icon = icons[type];
+
 	return (
 		<motion.div
-			className="storybook-toast"
-			initial={{ opacity: 0, y: 16 }}
+			className={`storybook-toast toast-${type}`}
+			initial={{ opacity: 0, y: 12 }}
 			animate={{ opacity: 1, y: 0 }}
-			exit={{ opacity: 0, y: 16 }}
-			transition={{ type: "spring", stiffness: 220, damping: 24 }}
+			exit={{ opacity: 0, y: 12 }}
+			transition={{ type: "spring", stiffness: 240, damping: 20 }}
 		>
-			<span>{message}</span>
-			{onDismiss && (
-				<button
-					onClick={onDismiss}
-					aria-label="Dismiss toast"
-				>
-					<X size={16} />
-				</button>
-			)}
+			<Icon
+				className="toast-icon"
+				size={20}
+			/>
+			<div className="toast-text">
+				<strong>{title}</strong>
+				{description && <p>{description}</p>}
+			</div>
 		</motion.div>
 	);
 };

@@ -1,0 +1,55 @@
+.storybook-tabs {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.tab-list {
+	display: flex;
+	gap: 1rem;
+	border-bottom: 1px solid var(--border-color);
+	position: relative;
+}
+
+.tab-button {
+	position: relative;
+	padding: 0.5rem 1rem;
+	background: transparent;
+	border: none;
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--text-secondary);
+	cursor: pointer;
+	border-radius: 0.5rem;
+	transition: all 0.2s ease;
+}
+
+.tab-button.active {
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
+.tab-button:hover {
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.tab-icon {
+	margin-right: 0.5rem;
+	vertical-align: middle;
+}
+
+.tab-underline {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -1px;
+	height: 3px;
+	border-radius: 3px;
+	background: var(--gradient);
+}
+
+.tab-panel {
+	min-height: 80px;
+	color: var(--text-primary);
+}
