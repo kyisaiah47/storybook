@@ -1,32 +1,88 @@
+import React from "react";
+import { motion } from "framer-motion";
+import "./welcome.css";
+
+const fadeInUp = {
+	initial: { opacity: 0, y: 20 },
+	animate: (i: number) => ({
+		opacity: 1,
+		y: 0,
+		transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+	}),
+};
+
 export const Welcome = () => {
+	const cards = [
+		{
+			icon: "📦",
+			title: "Components",
+			text: "Reusable buttons, cards, modals, and more—organized by design system best practices.",
+		},
+		{
+			icon: "🎞️",
+			title: "Motion",
+			text: "Subtle animations powered by Framer Motion to bring interactions to life.",
+		},
+		{
+			icon: "🖌️",
+			title: "Theming",
+			text: "Consistent colors, spacing, and typography defined via design tokens.",
+		},
+	];
+
 	return (
-		<div className="min-h-screen flex flex-col justify-center items-center px-6 py-12 bg-gradient-to-b from-[#f9f7ff] to-white text-center font-['Plus_Jakarta_Sans'] text-neutral-900">
-			<div className="max-w-xl">
-				<h1 className="text-3xl md:text-4xl font-bold mb-4">
-					Welcome to the Sonder Component Library
-				</h1>
-				<p className="text-lg text-neutral-700 mb-8">
-					Explore the reusable building blocks of the app.
-				</p>
-				<ul className="space-y-4 text-left text-base text-neutral-800">
-					<li className="flex items-start gap-2">
-						<span>🧱</span>
-						<span>Atomic components</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span>🌀</span>
-						<span>Motion and layout</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span>🎨</span>
-						<span>Styled with Tailwind and design tokens</span>
-					</li>
-				</ul>
-				<p className="mt-10 text-sm text-neutral-500">
-					This is a mock Storybook project built to practice component-driven
-					development.
-				</p>
-			</div>
+		<div className="welcome-container">
+			<motion.div
+				className="welcome-shell"
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, ease: "easeOut" }}
+			>
+				<div className="welcome-card">
+					<h1 className="welcome-title">Component Library</h1>
+					<p className="welcome-subtitle">
+						Explore the reusable building blocks of the app.
+					</p>
+					<ul className="welcome-list">
+						<li>
+							<span className="emoji">🧱</span>
+							<span>Atomic components</span>
+						</li>
+						<li>
+							<span className="emoji">🌀</span>
+							<span>Motion and layout</span>
+						</li>
+						<li>
+							<span className="emoji">🎨</span>
+							<span>Styled with Tailwind and design tokens</span>
+						</li>
+					</ul>
+					<p className="welcome-note">
+						This is a mock Storybook project built to practice component-driven
+						development.
+					</p>
+				</div>
+
+				<div className="welcome-details">
+					<h2>What&apos;s inside?</h2>
+					<div className="details-grid">
+						{cards.map((card, i) => (
+							<motion.div
+								key={i}
+								className="detail-card"
+								custom={i}
+								initial="initial"
+								animate="animate"
+							>
+								<h3>
+									{card.icon} {card.title}
+								</h3>
+								<p>{card.text}</p>
+							</motion.div>
+						))}
+					</div>
+				</div>
+			</motion.div>
 		</div>
 	);
 };
