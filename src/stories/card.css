@@ -1,0 +1,31 @@
+.storybook-card {
+	background: var(--glass-bg);
+	border: 1px solid var(--border-color);
+	backdrop-filter: blur(20px);
+	box-shadow: var(--shadow);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	color: var(--text-primary);
+	font-family: "Plus Jakarta Sans", sans-serif;
+	transition: box-shadow 0.3s ease, transform 0.2s ease;
+	margin: 2.5rem auto;
+	max-width: 600px;
+}
+
+.storybook-card:hover {
+	box-shadow: 0 8px 32px rgba(140, 120, 255, 0.2);
+	transform: translateY(-2px);
+}
+
+.storybook-card h3 {
+	margin: 0 0 0.5rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--text-primary);
+}
+
+.storybook-card p {
+	margin: 0;
+	font-size: 0.95rem;
+	color: var(--text-secondary);
+}

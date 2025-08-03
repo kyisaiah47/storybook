@@ -1,38 +1,22 @@
-import { Button } from "./Button";
-import "./header.css";
 import { motion } from "framer-motion";
+import "./header.css";
 
-type User = {
-	name: string;
-};
-
-export interface HeaderProps {
-	user?: User;
-	onLogin?: () => void;
-	onLogout?: () => void;
-	onCreateAccount?: () => void;
-}
-
-export const Header = ({
-	user,
-	onLogin,
-	onLogout,
-	onCreateAccount,
-}: HeaderProps) => (
+export const Header = () => (
 	<header>
 		<motion.div
 			className="storybook-header"
-			initial={{ opacity: 0, y: -10 }}
+			initial={{ opacity: 0, y: -16 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ type: "spring", stiffness: 260, damping: 20 }}
+			transition={{ type: "spring", stiffness: 200, damping: 24 }}
 		>
 			{/* Brand */}
 			<div className="storybook-header__brand">
 				<svg
-					width="32"
-					height="32"
+					width="28"
+					height="28"
 					viewBox="0 0 32 32"
 					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
 				>
 					<g
 						fill="none"
@@ -52,76 +36,21 @@ export const Header = ({
 						/>
 					</g>
 				</svg>
-				<h1 className="storybook-header__title">Acme</h1>
+				<h1 className="storybook-header__title">Sonder</h1>
 			</div>
 
-			{/* Navigation with dropdowns */}
+			{/* Navigation */}
 			<nav className="storybook-header__nav">
-				<div className="dropdown">
-					<span>Home</span>
-					<div className="dropdown-menu">
-						<a href="#">Overview</a>
-						<a href="#">Updates</a>
-					</div>
-				</div>
-				<div className="dropdown">
-					<span>Features</span>
-					<div className="dropdown-menu">
-						<a href="#">AI Tools</a>
-						<a href="#">Automation</a>
-						<a href="#">Integrations</a>
-					</div>
-				</div>
-				<div className="dropdown">
-					<span>Pricing</span>
-					<div className="dropdown-menu">
-						<a href="#">Free</a>
-						<a href="#">Pro</a>
-						<a href="#">Enterprise</a>
-					</div>
-				</div>
-				<div className="dropdown">
-					<span>About</span>
-					<div className="dropdown-menu">
-						<a href="#">Our Story</a>
-						<a href="#">Careers</a>
-						<a href="#">Contact</a>
-					</div>
-				</div>
+				<a href="#">Work</a>
+				<a href="#">Services</a>
+				<a href="#">About</a>
+				<a
+					className="active"
+					href="#"
+				>
+					Contact
+				</a>
 			</nav>
-
-			{/* Search */}
-			<div className="storybook-header__search">
-				<input
-					type="text"
-					placeholder="Search..."
-				/>
-			</div>
-
-			{/* Auth */}
-			<div className="storybook-header__actions">
-				{user ? (
-					<Button
-						size="small"
-						onClick={onLogout}
-						label="Log out"
-					/>
-				) : (
-					<>
-						<Button
-							size="small"
-							onClick={onLogin}
-							label="Log in"
-						/>
-						<Button
-							primary
-							size="small"
-							onClick={onCreateAccount}
-							label="Sign up"
-						/>
-					</>
-				)}
-			</div>
 		</motion.div>
 	</header>
 );
