@@ -1,0 +1,26 @@
+.storybook-quote {
+	border-left: 4px solid #a78bfa; /* soft purple border */
+	background: transparent;
+	padding: 1.5rem 2rem;
+	border-radius: 1rem;
+	box-shadow: none; /* remove glow */
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: var(--text-primary);
+	max-width: 600px;
+	border: 1px solid rgba(167, 139, 250, 0.2); /* optional soft outline */
+	backdrop-filter: blur(6px);
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.quote-text {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.quote-author {
+	margin-top: 0.75rem;
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	text-align: right;
+}

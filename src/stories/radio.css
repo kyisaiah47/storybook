@@ -41,3 +41,24 @@
 	background: var(--gradient);
 	box-shadow: 0 0 6px var(--accent-glow);
 }
+
+.storybook-radio input:checked + .radio-custom::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--gradient);
+	box-shadow: 0 0 6px var(--accent-glow);
+	animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+	from {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

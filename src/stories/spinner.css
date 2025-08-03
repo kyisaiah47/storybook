@@ -1,0 +1,8 @@
+.storybook-spinner {
+	width: 82px;
+	height: 82px;
+	border-radius: 50%;
+	border: 5px solid var(--glass-bg);
+	border-top-color: var(--gradient-start, #a78bfa);
+	box-shadow: var(--shadow);
+}

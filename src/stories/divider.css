@@ -1,0 +1,9 @@
+.storybook-divider {
+	border: none;
+	height: 3px;
+	width: 400px;
+	background: linear-gradient(to right, #c084fc, #60a5fa, #a78bfa);
+	border-radius: 999px;
+	opacity: 0.8;
+	box-shadow: 0 0 6px rgba(160, 120, 255, 0.15);
+}

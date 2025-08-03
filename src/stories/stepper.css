@@ -1,0 +1,61 @@
+.storybook-stepper {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	cursor: pointer;
+}
+
+.step-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+	gap: 0.5rem;
+	transition: all 0.2s ease;
+}
+
+.step-circle {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--glass-bg);
+	border: 2px solid var(--border-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.75rem;
+	color: var(--text-secondary);
+	box-shadow: var(--shadow);
+	transition: all 0.3s ease;
+}
+
+.step-circle.active {
+	background: var(--gradient);
+	color: white;
+	box-shadow: 0 0 8px var(--accent-glow);
+	transform: scale(1.15);
+}
+
+.step-label {
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	transition: color 0.3s ease;
+}
+
+.step-label.active {
+	color: var(--text-primary);
+	font-weight: 500;
+}
+
+.step-line {
+	width: 3rem;
+	height: 2px;
+	background: var(--border-color);
+	border-radius: 999px;
+	transition: background 0.3s ease;
+}
+
+.step-line.filled {
+	background: var(--gradient);
+	box-shadow: 0 0 4px var(--accent-glow);
+}
