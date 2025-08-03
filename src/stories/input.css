@@ -1,0 +1,23 @@
+.storybook-input {
+	width: 100%;
+	max-width: 400px;
+	padding: 0.75rem 1rem;
+	font-size: 0.9rem;
+	border-radius: 0.75rem;
+	border: 1px solid var(--border-color);
+	background: var(--glass-bg);
+	color: var(--text-primary);
+	backdrop-filter: blur(14px);
+	outline: none;
+	transition: border 0.2s ease, box-shadow 0.2s ease;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.storybook-input::placeholder {
+	color: var(--text-secondary);
+}
+
+.storybook-input:focus {
+	border-color: rgba(140, 120, 255, 0.4);
+	box-shadow: 0 0 0 2px rgba(140, 120, 255, 0.25);
+}

@@ -1,0 +1,29 @@
+.storybook-toast {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--glass-bg);
+	color: var(--text-primary);
+	border: 1px solid var(--border-color);
+	box-shadow: var(--shadow);
+	backdrop-filter: blur(20px);
+	border-radius: 0.75rem;
+	padding: 0.75rem 1rem;
+	font-size: 0.9rem;
+	gap: 1rem;
+	max-width: 320px;
+}
+
+.storybook-toast button {
+	all: unset;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-secondary);
+	transition: color 0.2s ease;
+}
+
+.storybook-toast button:hover {
+	color: var(--text-primary);
+}
