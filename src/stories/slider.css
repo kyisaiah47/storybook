@@ -1,0 +1,88 @@
+.storybook-slider {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: var(--text-primary);
+}
+
+.storybook-slider label {
+	font-size: 0.95rem;
+	color: var(--text-secondary);
+}
+
+.slider-wrapper {
+	position: relative;
+	width: 280px;
+}
+
+/* Remove default styles */
+.slider-input {
+	width: 100%;
+	appearance: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+/* Track */
+.slider-input::-webkit-slider-runnable-track {
+	height: 8px;
+	border-radius: 999px;
+	background: var(--glass-bg);
+	box-shadow: var(--shadow);
+	border: 1px solid var(--border-color);
+}
+
+.slider-input::-moz-range-track {
+	height: 8px;
+	border-radius: 999px;
+	background: var(--glass-bg);
+	box-shadow: var(--shadow);
+	border: 1px solid var(--border-color);
+}
+
+/* Thumb */
+.slider-input::-webkit-slider-thumb {
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #c084fc, #60a5fa);
+	box-shadow: 0 0 0 1px white;
+	margin-top: -5px;
+	transition: transform 0.2s ease;
+}
+
+.slider-input::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #c084fc, #60a5fa);
+	box-shadow: 0 0 0 1px white;
+	border: none;
+	cursor: pointer;
+}
+
+/* Hover animation */
+.slider-input::-webkit-slider-thumb:hover {
+	transform: scale(1.1);
+}
+.slider-input::-moz-range-thumb:hover {
+	transform: scale(1.1);
+}
+
+.slider-thumb-value {
+	position: absolute;
+	bottom: -26px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.75rem;
+	background: var(--glass-bg);
+	border: 1px solid var(--border-color);
+	border-radius: 999px;
+	padding: 0.2rem 0.5rem;
+	color: var(--text-primary);
+	white-space: nowrap;
+	box-shadow: var(--shadow);
+}

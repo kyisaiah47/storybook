@@ -1,0 +1,32 @@
+.storybook-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: var(--text-primary);
+	font-size: 0.95rem;
+	user-select: none;
+}
+
+.storybook-checkbox input {
+	display: none;
+}
+
+.checkbox-custom {
+	width: 18px;
+	height: 18px;
+	border: 1px solid var(--border-color);
+	background: var(--glass-bg);
+	box-shadow: var(--shadow);
+	border-radius: 0.25rem;
+	position: relative;
+}
+
+.storybook-checkbox input:checked + .checkbox-custom::after {
+	content: "";
+	position: absolute;
+	inset: 3px;
+	background: var(--gradient);
+	border-radius: 2px;
+}

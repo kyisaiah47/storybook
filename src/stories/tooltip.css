@@ -1,0 +1,35 @@
+.storybook-tooltip-wrapper {
+	display: inline-block;
+	position: relative;
+	font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.tooltip-anchor {
+	display: inline-block;
+	position: relative;
+}
+
+.tooltip-bubble {
+	position: absolute;
+	left: -20%;
+	white-space: nowrap;
+	background: var(--glass-bg);
+	color: var(--text-primary);
+	font-size: 0.75rem;
+	padding: 0.4rem 0.75rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow);
+	border: 1px solid var(--border-color);
+	z-index: 50;
+	pointer-events: none;
+}
+
+.tooltip-bubble.top {
+	bottom: 100%;
+	margin-bottom: 0.5rem;
+}
+
+.tooltip-bubble.bottom {
+	top: 100%;
+	margin-top: 0.5rem;
+}
