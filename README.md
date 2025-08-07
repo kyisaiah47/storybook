@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Storybook Project
+
+A customized Storybook setup for developing and organizing my UI components in isolation. This personal library showcases reusable components and design patterns with live previews and documentation.
+
+---
+
+## Features
+
+- Develop and preview UI components independently.
+- Structured documentation for components using stories.
+- Leverage addons like controls, actions, and docs for richer developer experience.
+- Serve components as a static site with `npm run build-storybook`.
+
+---
+
+## Tech Stack & Tools
+
+- **Storybook** (React)
+- Common addons: Controls, Actions, Docs, Viewport
+- **React** component library
+- **Node.js/NPM** package management
+
+---
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/kyisaiah47/storybook.git
+   cd storybook
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Start Storybook in development mode:
+   ```bash
+   npm run storybook
+   ```
+   Then open `http://localhost:6006` to explore your component stories.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Build a static Storybook site:
+   ```bash
+   npm run build-storybook
+   ```
+   The output will appear in the `storybook-static` directory — perfect for hosting.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `.storybook/`: Configuration for Storybook (main.js, preview.js, etc.)
+- `src/components/`: Your reusable UI components
+- `src/stories/`: Story files for showcasing each component's states
+- `storybook-static/`: Built static site (after running `build-storybook`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License & Credits
 
-## Deploy on Vercel
+This project is for **personal use**. See the LICENSE file for more details (if applicable).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact & Feedback
+
+Ideas, feedback, or questions? Reach out to **Isaiah Kim** via GitHub: [kyisaiah47](https://github.com/kyisaiah47)
