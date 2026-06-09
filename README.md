@@ -1,69 +1,65 @@
-# Personal Storybook Project
+<div align="center">
 
-A customized Storybook setup for developing and organizing my UI components in isolation. This personal library showcases reusable components and design patterns with live previews and documentation.
+<!-- BANNER_PLACEHOLDER -->
 
----
+# 📚 Component Library
 
-## Features
+**Personal Storybook — React UI components built and documented in isolation**
 
-- Develop and preview UI components independently.
-- Structured documentation for components using stories.
-- Leverage addons like controls, actions, and docs for richer developer experience.
-- Serve components as a static site with `npm run build-storybook`.
+![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 
----
+</div>
 
-## Tech Stack & Tools
+<br/>
 
-- **Storybook** (React)
-- Common addons: Controls, Actions, Docs, Viewport
-- **React** component library
-- **Node.js/NPM** package management
+A personal component library built with Storybook and React, featuring a comprehensive set of reusable UI components documented and previewed in isolation. Each component is developed with Tailwind CSS, tested with Vitest, and powered by Framer Motion for smooth animations.
 
----
+## ✨ Components
 
-## Getting Started
+- **Accordion** — Collapsible content sections
+- **Avatar** — User profile image with fallback
+- **Badge** — Status and label indicators
+- **Button** — Primary interaction element with variants
+- **Card** — Content container with flexible layout
+- **Carousel** — Sliding content viewer
+- **Checkbox** — Boolean input control
+- **Divider** — Visual content separator
+- **Header** — Page-level navigation header
+- **Input** — Text field with validation states
+- **Modal** — Overlay dialog for focused interactions
+- **Progress** — Task or loading completion indicator
+- **Quote** — Styled blockquote element
+- **Radio** — Single-select option control
+- **Skeleton** — Loading placeholder animation
+- **Slider** — Range value selector
+- **Spinner** — Loading state indicator
+- **Stepper** — Multi-step workflow indicator
+- **Tabs** — Tabbed content navigation
+- **Toast** — Ephemeral notification messages
+- **Toggle** — Binary switch control
+- **Tooltip** — Contextual hover information
 
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/kyisaiah47/storybook.git
-   cd storybook
-   ```
+## 🛠️ Tech Stack
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Storybook 9 · React 19 · Next.js 15 · TypeScript · Tailwind CSS v4 · Framer Motion · Vitest · Chromatic
 
-3. Start Storybook in development mode:
-   ```bash
-   npm run storybook
-   ```
-   Then open `http://localhost:6006` to explore your component stories.
+## 🚀 Getting Started
 
-4. Build a static Storybook site:
-   ```bash
-   npm run build-storybook
-   ```
-   The output will appear in the `storybook-static` directory — perfect for hosting.
+```bash
+npm install
+npm run storybook
+```
 
----
+Open [http://localhost:6006](http://localhost:6006) to explore the component stories.
 
-## Project Structure
+To build a static Storybook site:
 
-- `.storybook/`: Configuration for Storybook (main.js, preview.js, etc.)
-- `src/components/`: Your reusable UI components
-- `src/stories/`: Story files for showcasing each component's states
-- `storybook-static/`: Built static site (after running `build-storybook`)
+```bash
+npm run build-storybook
+```
 
----
+Output lands in `storybook-static/` — ready to host anywhere.
 
-## License & Credits
+## 📄 License
 
-This project is for **personal use**. See the LICENSE file for more details (if applicable).
-
----
-
-## Contact & Feedback
-
-Ideas, feedback, or questions? Reach out to **Isaiah Kim** via GitHub: [kyisaiah47](https://github.com/kyisaiah47)
+MIT
